@@ -1,0 +1,9 @@
+## Usage 
+
+```
+✗ gh find-file '.npmrc'
+.npmrc found in lesson-30
+
+✗ git -P show lesson-30:.npmrc
+engine-strict=true
+```

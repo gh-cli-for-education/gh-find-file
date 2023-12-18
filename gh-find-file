@@ -2,7 +2,8 @@
 set -e
 FILE=$1
 
-if [ -z "$FILE" ]; then
+# Check that $FILE is not --help or -h
+if [ -z "$FILE" ] || [ "$FILE" == "--help" ] || [ "$FILE" == "-h" ]; then
     echo "Usage: gh-find-file <file>"
     exit 1
 fi
