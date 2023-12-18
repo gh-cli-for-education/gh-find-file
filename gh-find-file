@@ -8,9 +8,10 @@ if [ -z "$FILE" ] || [ "$FILE" == "--help" ] || [ "$FILE" == "-h" ]; then
     exit 1
 fi
 
-for branch in $(git branch | sed 's/\*//'); do
+for branch in $(git branch --all | sed 's/\*//' | sed 's/-> .*//'); do
     # Check if the file exists in the branch
-    if git ls-tree -r $branch --name-only | grep --quiet "$FILE"; then
+    
+    if git ls-tree --name-only -r "$branch"  | grep --quiet "$FILE"; then
         echo "$FILE found in $branch"
     fi
 done
