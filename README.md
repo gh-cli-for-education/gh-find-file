@@ -1,4 +1,16 @@
+## Installation
+
+```
+gh extension install gh-cli-for-education/gh-find-file
+```
+
 ## Usage 
+
+```
+gh-find-file <file>
+```
+
+## Example
 
 ```
 ✗ gh find-file '.npmrc'
